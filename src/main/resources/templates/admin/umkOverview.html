@@ -7,15 +7,8 @@
     <link rel="stylesheet" href="css/umkOverview.css">
 </head>
 <body>
-    <div class="navBar">
-        <h1>UMK APP</h1>
-        <a href=""><p>UMK</p></a>
-        <a href=""><p>Top Produk</p></a>
-        <a href=""><p>Request</p></a>
-        <div id="profile"></div>
-        <button>log out</button>
-    </div>
-
+    <th:block th:include="~{navBar :: Navigation}"></th:block>
+    
     <h1>UMK Overview</h1>
 
     <div id="fitur1">
@@ -31,7 +24,7 @@
             <div id="description">
                 <h3 th:text="${umk.name}"></h3>
                 <h3 th:text="${umk.description}"></h3>
-            </div>
+            </div> 
         </div>
     </div>
 
