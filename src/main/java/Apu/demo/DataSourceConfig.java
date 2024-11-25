@@ -23,9 +23,9 @@ public class DataSourceConfig {
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl(url);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/TestLoginAdmin");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("0930044762");
         return dataSource;
     }
 }
