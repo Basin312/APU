@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/umkOverview.css">
+</head>
+<body>
+    <div  class="navbar" >
+        <h1>UMK APP</h1>
+        <a href="@{/}"><p>UMK</p></a>
+        <a href="@{/admin/topProduk}"><p>Top Produk</p></a>
+        <a href="@{/admin/request}"><p>Request</p></a>
+        <div id="profile"></div>
+        <button>log out</button>
+    </div>
+    <h1>UMK Overview</h1>
+
+    <div id="fitur1">
+        <fieldset>
+            <select name="" id=""></select>
+            <form th:action="@{/admin/}" method="get">
+                <!-- Input untuk filter -->
+                <input type="text" name="filter" th:value="${filter}" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </fieldset>
+       
+        
+    </div>
+    <table>
+        <tr>
+            <th>logo</th>
+            <th>Name</th>
+            <th>deskripsi</th>
+        </tr>
+        <tr th:each="row : ${results}">
+            <td th:text="${row.logo}"></td>
+            <td th:text="${row.nama}"></td>
+            <td th:text="${row.deskripsi}"></td>
+        </tr>
+    </table>
+
+     
+</body>
+</html>
