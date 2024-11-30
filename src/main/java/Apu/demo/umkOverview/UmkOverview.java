@@ -6,9 +6,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class UmkOverview {
-    // private int idUmk;
+    private Integer idUmk;
     private String logo;
     private String nama;
     private String deskripsi;
-    // private double totaltransaksi;
+    private Double totaltransaksi;
 }

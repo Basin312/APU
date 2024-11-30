@@ -19,7 +19,7 @@ public class AdminController {
 
     @GetMapping("/")
     public String showLoginForm() {
-        return "redirect:/login"; // Mengarahkan ke halaman login
+        return "/admin/login"; // Mengarahkan ke halaman login
     }
 
     @PostMapping("/admin")
@@ -30,7 +30,7 @@ public class AdminController {
             return "redirect:/login"; // Ganti dengan URL dashboard
         } else {
             model.addAttribute("error", "Invalid username or password");
-            return "login"; // Kembali ke halaman login dengan pesan error
+            return "/admin/umkoverview/"; // Kembali ke halaman login dengan pesan error
         }
     }
 }

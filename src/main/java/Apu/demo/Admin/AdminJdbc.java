@@ -19,7 +19,7 @@ public class AdminJdbc implements AdminRepository {
         // Query yang benar dengan parameter
         String sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
         // Menggunakan query dengan parameter username dan password
-        return jdbcTemplate.query("SELECT * FROM Admin", this::mapRowToAdmin);
+        return jdbcTemplate.query(sql, this::mapRowToAdmin,username,password);
     }
 
     private Admin mapRowToAdmin(ResultSet rs, int rowNum) throws SQLException {
