@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/MainPage-admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbarcontainer">
+        <div class="leftgroup">
+            <p id="judul">UMK APP</p>
+            <p class="judulkecil">UMK</p>
+            <p class="judulkecil">Products</p>
+            <p class="judulkecil">Request</p>
+        </div>
+        <div class="rightgroup">
+            <div id="logout">
+                Logout
+            </div>
+        </div>
+        
+    </div>
+    <div id="bodycontainer">
+        <div id="subjudul"> UMK Overview</div>
+        <div class="utilitycontainer">
+            <select id="sort" name="sort">
+                <option value="option1">sort 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+            <input type="text" class="search-bar" placeholder="Search...">
+            <button class="search-button">Search</button>
+            <select id="filter" name="filter">
+                <option value="option1">filter 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+        <div class="UMKboxcontainer">
+            <div class="UMKbox">
+                <div class="UMKboxPicture"></div>
+                <div class="UMKboxDescription">
+                    <p class="judulUMK">Judul UMK</p>
+                    <p class="deskripsiUMK">Deskripsi</p>
+                </div>
+                
+            </div>
+
+            <div class="UMKbox">
+                <div class="UMKboxPicture"></div>
+                <div class="UMKboxDescription">
+                    <p class="judulUMK">Judul UMK</p>
+                    <p class="deskripsiUMK">Deskripsi</p>
+                </div>
+                
+            </div>
+            <div class="UMKbox">
+                <div class="UMKboxPicture"></div>
+                <div class="UMKboxDescription">
+                    <p class="judulUMK">Judul UMK</p>
+                    <p class="deskripsiUMK">Deskripsi</p>
+                </div>
+                
+            </div>
+            <div class="UMKbox">
+                <div class="UMKboxPicture"></div>
+                <div class="UMKboxDescription">
+                    <p class="judulUMK">Judul UMK</p>
+                    <p class="deskripsiUMK">Deskripsi</p>
+                </div>
+                
+            </div><div class="UMKbox">
+                <div class="UMKboxPicture"></div>
+                <div class="UMKboxDescription">
+                    <p class="judulUMK">Judul UMK</p>
+                    <p class="deskripsiUMK">Deskripsi</p>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        
+    </div>
+
+    <script>
+        // Function to add a new UMK Box with custom title and description
+        function addUMKbox() {
+            // Prompt the user to enter custom title and description
+            var customTitle = prompt("Enter the title for UMK Box:");
+            var customDescription = prompt("Enter the description for UMK Box:");
+
+            // Check if the user provided values
+            if (!customTitle || !customDescription) {
+                alert("Please provide both a title and description!");
+                return; // Exit if either is empty
+            }
+
+            // Create new elements
+            var newUMKbox = document.createElement('div');
+            newUMKbox.classList.add('UMKbox');
+
+            var newUMKboxPicture = document.createElement('div');
+            newUMKboxPicture.classList.add('UMKboxPicture');
+
+            var newUMKboxDescription = document.createElement('div');
+            newUMKboxDescription.classList.add('UMKboxDescription');
+
+            var newJudul = document.createElement('p');
+            newJudul.classList.add('judulUMK');
+            newJudul.textContent = customTitle;  // Set custom title
+
+            var newDeskripsi = document.createElement('p');
+            newDeskripsi.classList.add('deskripsiUMK');
+            newDeskripsi.textContent = customDescription;  // Set custom description
+
+            // Append the elements
+            newUMKboxDescription.appendChild(newJudul);
+            newUMKboxDescription.appendChild(newDeskripsi);
+
+            newUMKbox.appendChild(newUMKboxPicture);
+            newUMKbox.appendChild(newUMKboxDescription);
+
+            // Find the parent container and append the new UMKbox
+            var container = document.getElementById('UMKboxcontainer');
+            container.appendChild(newUMKbox);
+        }
+    </script>
+</body>
+</html>

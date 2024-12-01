@@ -1,0 +1,166 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+}
+#navbarcontainer{
+    width: 100%;
+    height: 90px;
+    background-color: #D9D9D9;
+    margin:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    box-sizing: border-box;
+    padding: 10px; 
+            
+}
+
+
+.leftgroup,
+.rightgroup{
+    display: flex; /* Keep items in a row within the group */
+    gap: 60px; /* Add spacing between items in each group */
+    
+}
+
+.judulkecil{
+    font-size: 23px;
+    align-items: center;
+    display: flex;
+    
+}
+
+#judul{
+    font-size: 40px;
+    
+}
+
+#logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 30px;
+    background-color: #D9D9D9;
+    border:solid 1px;
+    padding:20px;
+    font-weight: bold;
+    font-size: 20px ;
+}
+
+
+#bodycontainer{
+    /* background-color: black; */
+    width: 100%;
+    /* height: 1024px; */
+    /* display: flex;
+    align-items: center; */
+    /* justify-content: center; */
+    /* padding: 100px; */
+    padding-top: 50px;
+    padding-left: 240px;
+    /* margin-right: 290px; */
+    /* padding-bottom: 30px; */
+    
+}
+
+#subjudul{
+    display: flex;
+    align-items: start;
+    font-size: 30px;
+}
+
+.utilitycontainer {
+    display: flex;
+     /* Center the search bar */
+    align-items: center;
+    margin-top: 20px; /* Add some space from the top */
+}
+
+.search-bar {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px; /* Set a width for the search bar */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #575757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: #dedede;
+    color:black;
+    border: solid 1px;
+}
+
+#sort{
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#filter{
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.UMKboxcontainer{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-top: 20px;
+    /* background-color: black; */
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: flex-start; /* Align items to the top */
+    gap: 10px; /* Space between items */
+    border: 2px solid black; /* Visualize the container */
+    padding: 10px;
+    min-height: 100px; /* Minimum height to show content */
+
+    
+    
+}
+.UMKbox{
+    width: 320px;
+    height: 253px;
+    background-color: #D9D9D9;
+}
+.UMKboxPicture{
+    width: 320px;
+    height: 158px;
+    border: solid 1px;
+}
+
+.UMKboxDescription{
+    width: 320px;
+    height: 95px;
+    border: solid 1px;
+}
+
+.judulUMK{
+    margin : 10px;
+    font-size: 22px;
+}
+.deskripsiUMK{
+    margin : 10px;
+    font-size: 16px;
+}

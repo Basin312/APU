@@ -1,0 +1,54 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+}
+#navbarcontainer{
+    width: 100%;
+    height: 90px;
+    background-color: #D9D9D9;
+    margin:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    box-sizing: border-box;
+    padding: 10px; 
+            
+}
+#bodycontainer{
+    /* background-color: black; */
+    width: 100%;
+    
+}
+
+.leftgroup,
+.rightgroup{
+    display: flex; /* Keep items in a row within the group */
+    gap: 60px; /* Add spacing between items in each group */
+    
+}
+
+.judulkecil{
+    font-size: 23px;
+    align-items: center;
+    display: flex;
+    
+}
+
+#judul{
+    font-size: 40px;
+    
+}
+
+#logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 30px;
+    background-color: #D9D9D9;
+    border:solid 1px;
+    padding:20px;
+    font-weight: bold;
+    font-size: 20px ;
+}
+

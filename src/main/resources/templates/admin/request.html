@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/umkOverview.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div  class="navbar" >
+        <h1>UMK APP</h1>
+        <a href="/admin/umkOverview"><p>UMK</p></a>
+        <a href="/admin/topProduk"><p>Top Produk</p></a>
+        <a href="/admin/request"><p>Request</p></a>
+        <div id="profile"></div>
+        <a href="/login/">log out</a>
+    </div>
+    <div id="content">
+        <h1>UMK Request</h1>
+
+        <fieldset id="fitur1">
+            <form th:action="@{/admin/request}" method="get">
+                <select name="sorting" id="sorting" onchange="this.form.submit()">
+                    <option value="" th:selected="${sorting == null or sorting.isEmpty()}">select</option>
+                    <option value="nama" th:selected="${sorting == 'nama'}">nama</option>
+                    <option value="transaksiumk" th:selected="${sorting == 'transaksiumk'}">transaksi</option>
+                </select>
+                <!-- Input untuk filter -->
+                <input type="text" name="filter" th:value="${filter}" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </fieldset>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Nama Pemilik</th>
+                    <th>No HP</th>
+                    <th>Alamat</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="row : ${results}">
+                    <td th:text="${row.nama}"></td>
+                    <td th:text="${row.namapemilik}"></td>
+                    <td th:text="${row.noHp}"></td>
+                    <td th:text="${row.alamat}"></td>
+                    <td>
+                        <a th:href="@{/admin/request/detail(nama=${row.nama})}">View Details</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>
