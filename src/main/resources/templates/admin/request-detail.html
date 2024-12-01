@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Details</title>
+</head>
+<body>
+    <h1>UMK Request Details</h1>
+    <p><strong>Nama:</strong> <span th:text="${umkRequest.nama}"></span></p>
+    <p><strong>Nama Pemilik:</strong> <span th:text="${umkRequest.namapemilik}"></span></p>
+    <p><strong>No HP:</strong> <span th:text="${umkRequest.noHp}"></span></p>
+    <p><strong>Alamat:</strong> <span th:text="${umkRequest.alamat}"></span></p>
+    <p><strong>Deskripsi:</strong> <span th:text="${umkRequest.deskripsi}"></span></p>
+    <p><strong>Logo:</strong> <span th:text="${umkRequest.logo}"></span></p>
+    <p><strong>Approve:</strong> <span th:text="${umkRequest.approve}"></span></p>
+    <form th:action="@{/admin/request/approve}" method="post">
+        <input type="hidden" name="nama" th:value="${umkRequest.nama}" />
+        <button type="submit">Approve</button>
+    </form>    
+    <a href="/admin/request">Back to List</a>
+</body>
+</html>

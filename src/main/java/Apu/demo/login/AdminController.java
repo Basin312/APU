@@ -28,7 +28,7 @@ public class AdminController {
 
         if (!admins.isEmpty()) {
             if(admins.get(0).getPassword().equals(password)){
-                return "redirect:/admin/"; // Ganti dengan URL dashboard
+                return "redirect:/admin/umkOverview"; // Ganti dengan URL dashboard
             }
             return "/";
         } else {

@@ -17,7 +17,7 @@ public class UmkControlling implements ErrorController{
     @Autowired
     private UmkRepository jdbc;
 
-    @GetMapping("/")
+    @GetMapping("/umkOverview")
     public String halamanLogin(Model model, @RequestParam(name ="filter",required = false) String filter,@RequestParam(name="sorting",required=false) String type){
         List<UmkOverview> umk = null;
         if(type!=null && !type.isEmpty() ){
