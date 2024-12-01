@@ -1,4 +1,4 @@
-package Apu.demo.Admin;
+package Apu.demo.login;
 
 
 import lombok.AllArgsConstructor;
