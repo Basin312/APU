@@ -19,8 +19,17 @@ public class RequestControlling {
     private RequestRepository jdbc;
     
     @GetMapping("/request")
-    public String halamanRequest(Model model){
-        List<UmkRequest> list = jdbc.findAll();
+    public String halamanRequest(Model model, @RequestParam(name="sorting",required = false) String name, @RequestParam(name="filter", required = false) String filter){
+
+        List<UmkRequest> list = null;
+        if (filter != null && !filter.isEmpty()) {
+            list = jdbc.searchByName(filter);
+        } else if (name != null && !name.isEmpty()) {
+            list = jdbc.sortir(name);
+        } else {
+            list = jdbc.findAll();
+        }
+        
         model.addAttribute("results", list);
         return "/admin/request";
     }
@@ -37,7 +46,7 @@ public class RequestControlling {
     }
 
     @PostMapping("/request/approve")
-    public String approveRequest(@RequestParam String nama) {
+    public String approveRequest(@RequestParam(required = true) String nama) {
         jdbc.updateApprove(nama, true); // Update the `approve` field to true
         return "redirect:/admin/request"; // Redirect back to the detail page
     }

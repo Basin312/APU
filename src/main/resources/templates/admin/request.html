@@ -23,8 +23,8 @@
             <form th:action="@{/admin/request}" method="get">
                 <select name="sorting" id="sorting" onchange="this.form.submit()">
                     <option value="" th:selected="${sorting == null or sorting.isEmpty()}">select</option>
-                    <option value="nama" th:selected="${sorting == 'nama'}">nama</option>
-                    <option value="transaksiumk" th:selected="${sorting == 'transaksiumk'}">transaksi</option>
+                    <option value="asc" th:selected="${sorting == 'asc'}">ascending nama umk</option>
+                    <option value="desc" th:selected="${sorting == 'desc'}">descending nama umk</option>
                 </select>
                 <!-- Input untuk filter -->
                 <input type="text" name="filter" th:value="${filter}" placeholder="Search...">

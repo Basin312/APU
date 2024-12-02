@@ -26,14 +26,14 @@ public class AdminController {
     public String authenticateUser(@RequestParam String username, @RequestParam String password, Model model) {
         List<Admin> admins = adminRepository.findAdmin(username);
 
-        if (!admins.isEmpty()) {
+        if (!admins.isEmpty()&& admins !=null) {
             if(admins.get(0).getPassword().equals(password)){
                 return "redirect:/admin/umkOverview"; // Ganti dengan URL dashboard
             }
-            return "/";
+            return "/admin/login";
         } else {
             model.addAttribute("error", "Invalid username or password");
-            return "/"; // Kembali ke halaman login dengan pesan error
+            return "/admin/login"; // Kembali ke halaman login dengan pesan error
         }
     }
 }
