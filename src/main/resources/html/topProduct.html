@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMK Request Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="topProduct.css">
+</head>
+<body>
+    <div id="navbarcontainer">
+        <div class="leftgroup">
+            <p id="judul">UMK APP</p>
+            <p class="judulkecil">UMK</p>
+            <p class="judulkecil">Products</p>
+            <p class="judulkecil">Request</p>
+        </div>
+        <div class="rightgroup">
+            <div id="logout">
+                Log out
+            </div>
+        </div>
+    </div>
+    <div id="bodycontainer">
+        <h1>UMK 1</h1>
+        <div id="circle"></div>
+        <div id="content">
+            <form id="forms" action="" method="">
+                <div id="description-form">
+                    <textarea id="subject" name="subject" placeholder="Write description here"></textarea>
+                    <div class="input-group">
+                        <label for="address">Alamat:</label>
+                        <input type="text" name="alamat" id="address">
+                    </div>
+                    <div class="input-group">
+                        <label for="phonenum">No. telp:</label>
+                        <input type="text" name="notelp" id="phonenum">
+                    </div>
+                    <div class="input-group">
+                        <label for="owner">Pemilik:</label>
+                        <input type="text" name="owner" id="owner">
+                    </div>
+                </div>
+                <div id="rejectButton">
+                    <button type="button" id="reject">Reject</button>
+                </div>
+                <div id="submitButton">
+                    <button type="submit" id="submit">Ok</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
