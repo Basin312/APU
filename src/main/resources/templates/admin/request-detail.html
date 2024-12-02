@@ -4,20 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Details</title>
+    <link rel="stylesheet" href="/css/request-detail.css">
 </head>
 <body>
-    <h1>UMK Request Details</h1>
-    <p><strong>Nama:</strong> <span th:text="${umkRequest.nama}"></span></p>
-    <p><strong>Nama Pemilik:</strong> <span th:text="${umkRequest.namapemilik}"></span></p>
-    <p><strong>No HP:</strong> <span th:text="${umkRequest.noHp}"></span></p>
-    <p><strong>Alamat:</strong> <span th:text="${umkRequest.alamat}"></span></p>
-    <p><strong>Deskripsi:</strong> <span th:text="${umkRequest.deskripsi}"></span></p>
-    <p><strong>Logo:</strong> <span th:text="${umkRequest.logo}"></span></p>
-    <p><strong>Approve:</strong> <span th:text="${umkRequest.approve}"></span></p>
-    <form th:action="@{/admin/request/approve}" method="post">
-        <input type="hidden" name="nama" th:value="${umkRequest.nama}" />
-        <button type="submit">Approve</button>
-    </form>    
-    <a href="/admin/request">Back to List</a>
+    <div  class="navbar" >
+        <h1>UMK APP</h1>
+        <a href="/admin/umkOverview"><p>UMK</p></a>
+        <a href="/admin/topProduk"><p>Top Produk</p></a>
+        <a href="/admin/request"><p>Request</p></a>
+        <div id="profile"></div>
+        <a href="/login/">log out</a>
+    </div>
+    <div id="bodycontainer">
+        <div id="title">
+            <h1>UMK Request Details</h1>
+        </div>
+        <div id="desc1">
+            <div id="description-form">
+                <p><strong>Nama:</strong> <span th:text="${umkRequest.nama}"></span></p>
+                <p><strong>Nama Pemilik:</strong> <span th:text="${umkRequest.namapemilik}"></span></p>
+                <p><strong>No HP:</strong> <span th:text="${umkRequest.noHp}"></span></p>
+                <p><strong>Alamat:</strong> <span th:text="${umkRequest.alamat}"></span></p>
+                <p><strong>Deskripsi:</strong> <span th:text="${umkRequest.deskripsi}"></span></p>
+                <p><strong>Logo:</strong> <span th:text="${umkRequest.logo}"></span></p>
+                <p><strong>Approve:</strong> <span th:text="${umkRequest.approve}"></span></p>
+            </div>
+        </div>
+        <form th:action="@{/admin/request/approve}" method="post">
+            <input type="hidden" name="nama" th:value="${umkRequest.nama}" />
+            <button id="submitButton" type="submit">Approve</button>
+        </form> 
+        <div id="backContainer">
+            <div id="backlist">   
+                <a href="/admin/request">Back to List</a>
+            </div>
+        </div>
+        
+    </div>
 </body>
 </html>
