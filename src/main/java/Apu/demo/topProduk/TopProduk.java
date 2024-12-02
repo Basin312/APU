@@ -6,12 +6,11 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class TopProduk {
-    private String namaProduk;
-    private Double harga;
-    private String foto;
+    private String umk;
+    private String produk;
+    private Double hargajual;
     private String deskripsi;
     private String satuan;
-    private String namaUmk;
-    private Double total;
-    private Integer terjual;
+    private Integer jumlah;
+    private Double harga;
 }

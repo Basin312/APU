@@ -5,5 +5,5 @@ import java.util.Optional;
 
 public interface TopProdukRepository {
     List<TopProduk> findAll();
-    Optional<TopProduk> findbyname();
+    List<TopProduk> findbyname(String nama);
 }
