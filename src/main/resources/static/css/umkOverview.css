@@ -87,3 +87,19 @@ input{
     justify-content: center;
     align-items: center;
 }
+
+.dropdown {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .dropdown-details {
+    display: none;
+    margin-top: 10px;
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
