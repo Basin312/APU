@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/umkOverview.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- class navbar untuk navigation nar  -->
+    <div  class="navbar" >
+        <h1>UMK APP</h1>
+        <!-- optiion  -->
+        <a href="/admin/umkOverview"><p>UMK</p></a>
+        <a href="/admin/topProduk"><p>Top Produk</p></a>
+        <a href="/admin/request"><p>Request</p></a>
+        <div id="profile"></div>
+        <a href="/login/">log out</a>
+    </div>
+
+    <h1>UMK Request</h1>
+
+        <fieldset id="fitur1">
+            <form th:action="@{/admin/request}" method="get">
+                <select name="sorting" id="sorting" onchange="this.form.submit()">
+                    <option value="" th:selected="${sorting == null or sorting.isEmpty()}">select</option>
+                    <option value="asc" th:selected="${sorting == 'asc'}">ascending nama umk</option>
+                    <option value="desc" th:selected="${sorting == 'desc'}">descending nama umk</option>
+                </select>
+                <!-- Input untuk filter -->
+                <input type="text" name="filter" th:value="${filter}" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </fieldset>
+
+    <div class="dropdown" th:each="produk: ${results}" >
+        <h2 th:text="${produk.namaProduk}">judul</h2>
+        <h2 th:text="${produk.namaUmk}">umk</h2>
+        <h2 th:text="'sold:'+${produk.total}"></h2>
+        <button onclick="toggleDetails(this)">detail</button>
+        <div class="dropdown-details">
+          <p th:text="'deskripsi :'+${produk.deskripsi} ">Kategori: [kategori]</p>
+          <p th:text="'satuan :'+${produk.satuan} ">Kategori: [kategori]</p>
+          <p th:text="'Sold berapa: '+${produk.terjual}">Sold Berapa: 1000</p>
+          <p th:text="'Harga: '+${produk.harga}">Harga: [harga]</p>
+        </div>
+    </div>
+    <script>
+        function toggleDetails(button) {
+          const details = button.nextElementSibling;
+          details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+      </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package Apu.demo.Admin;
+package Apu.demo.login;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,11 +15,11 @@ public class AdminJdbc implements AdminRepository {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public List<Admin> findAdmin(String username, String password) {
+    public List<Admin> findAdmin(String username) {
         // Query yang benar dengan parameter
-        String sql = "SELECT * FROM admin WHERE username = ? AND password = ?";
+        String sql = "SELECT username, password FROM admin WHERE username = ?";
         // Menggunakan query dengan parameter username dan password
-        return jdbcTemplate.query("SELECT * FROM Admin", this::mapRowToAdmin);
+        return jdbcTemplate.query(sql, this::mapRowToAdmin,username);
     }
 
     private Admin mapRowToAdmin(ResultSet rs, int rowNum) throws SQLException {

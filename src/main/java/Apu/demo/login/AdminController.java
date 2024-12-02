@@ -1,4 +1,4 @@
-package Apu.demo.Admin;
+package Apu.demo.login;
 
 import java.util.List;
 
@@ -19,18 +19,21 @@ public class AdminController {
 
     @GetMapping("/")
     public String showLoginForm() {
-        return "redirect:/login"; // Mengarahkan ke halaman login
+        return "/admin/login"; // Mengarahkan ke halaman login
     }
 
-    @PostMapping("/admin")
+    @PostMapping("/")
     public String authenticateUser(@RequestParam String username, @RequestParam String password, Model model) {
-        List<Admin> admins = adminRepository.findAdmin(username, password);
+        List<Admin> admins = adminRepository.findAdmin(username);
 
-        if (!admins.isEmpty()) {
-            return "redirect:/login"; // Ganti dengan URL dashboard
+        if (!admins.isEmpty()&& admins !=null) {
+            if(admins.get(0).getPassword().equals(password)){
+                return "redirect:/admin/umkOverview"; // Ganti dengan URL dashboard
+            }
+            return "/admin/login";
         } else {
             model.addAttribute("error", "Invalid username or password");
-            return "login"; // Kembali ke halaman login dengan pesan error
+            return "/admin/login"; // Kembali ke halaman login dengan pesan error
         }
     }
 }
