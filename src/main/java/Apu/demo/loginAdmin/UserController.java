@@ -1,4 +1,4 @@
-package Apu.demo.login;
+package Apu.demo.loginAdmin;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class UserController {
 
     @GetMapping("/")
     public String userLogin() {
-        return "user/loginuser";
+        return "umk/loginuser";
     }
     @PostMapping("/")
     public String authenticateUser(@RequestParam String username, @RequestParam String password, Model model) {
@@ -32,9 +32,5 @@ public class UserController {
             model.addAttribute("error", "Invalid username or password");
             return "/user/loginuser"; // Kembali ke halaman login dengan pesan error
         }
-    }
-    @GetMapping("/register")
-    public String userRegister() {
-        return "user/registeruser";
     }
 }
