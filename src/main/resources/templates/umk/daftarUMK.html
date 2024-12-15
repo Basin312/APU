@@ -33,16 +33,16 @@
     <p id="judul">UMK APP</p>
     <p id="subjudul">DAFTAR UMK</p>
     <div id="subcontainer"></div>
-    <form method="post" action="register" th:object="${user}">
+    <form method="post" action="register" >
     
 
     <label for="nama-usaha">Nama Usaha:</label>
-    <input type="text" id="nama-usaha" name="namaUsaha" placeholder="Value" required  th:field="*{namaUsaha}">
-    <span th:if="${#fields.hasErrors('namaUsaha')}" th:errors="*{namaUsaha}"></span>
+    <input type="text" id="nama-usaha" name="namaUsaha" placeholder="Value" required  >
+    <!-- <span th:if="${#fields.hasErrors('namaUsaha')}" th:errors="*{namaUsaha}"></span> -->
 
     <label for="nama-pemilik">Nama Pemilik:</label>
-    <input type="text" id="nama-pemilik" name="namaPemilik" placeholder="Value" required th:field="*{namaPemilik}">
-     <span th:if=""></span> 
+    <input type="text" id="nama-pemilik" name="namaPemilik" placeholder="Value" required >
+    <!-- <span th:if=""></span>  -->
 
     <label for="alamat-usaha">Alamat Usaha:</label>
     <input type="text" id="alamat-usaha" name="alamat-usaha" placeholder="Value" required>
