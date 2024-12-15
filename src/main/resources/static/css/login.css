@@ -73,11 +73,13 @@ label{
     color: black;
 }
 a{
-    color: black;
+    color: white;
     font-size: 20px;
+    text-decoration: none;
 }
 a:hover{
     color: blue;
+    text-decoration: underline;
 }
 /* }body {
     margin: 0; 

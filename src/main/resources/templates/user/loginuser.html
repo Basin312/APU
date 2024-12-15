@@ -11,7 +11,7 @@
     <div id="container">
         <div id="bg">
             <h1 id = judul>Aplikasi<br> Pembukuan UMK</H1>
-                <form th:action="@{/admin/}" method="post">
+                <form th:action="@{/user/}" method="post">
                     <div id="uname" class="input">
                         <label for="Username">Username</label><br>
                         <input type="text" name="username" id="Username" placeholder="Masukan username"><br>
@@ -21,8 +21,10 @@
                         <input type="password" name="password" id="password" placeholder="Masukan Password"><br>
                     </div>
                     <button type="submit" name="submit">Sign in</button>
+                </form><br>
+                <form action="register" method="get">
+                    <button type="submit" name="register"><a href="">Daftar UMK</a></button>
                 </form>
-                <!-- <a href="">Daftar UMK</a> -->
         </div>
     </div>
 </body>

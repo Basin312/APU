@@ -2,7 +2,6 @@ package Apu.demo.login;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,29 +10,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("admin")
-public class AdminController {
-
-    @Autowired
+@RequestMapping("user")
+public class UserController {
+    
     private LoginRepository loginRepository;
 
     @GetMapping("/")
-    public String showLoginForm() {
-        return "/admin/login"; // Mengarahkan ke halaman login
+    public String userLogin() {
+        return "user/loginuser";
     }
-
     @PostMapping("/")
     public String authenticateUser(@RequestParam String username, @RequestParam String password, Model model) {
-        List<Login> admins = loginRepository.findAdmin(username);
+        List<Login> user = loginRepository.findUsers(username);
 
-        if (!admins.isEmpty()&& admins !=null) {
-            if(admins.get(0).getPassword().equals(password)){
-                return "redirect:/admin/umkOverview"; // Ganti dengan URL dashboard
+        if (!user.isEmpty()&& user !=null) {
+            if(user.get(0).getPassword().equals(password)){
+                return "redirect:/user/homepage"; // Ganti dengan URL dashboard
             }
-            return "/admin/login";
+            return "/user/loginuser";
         } else {
             model.addAttribute("error", "Invalid username or password");
-            return "/admin/login"; // Kembali ke halaman login dengan pesan error
+            return "/user/loginuser"; // Kembali ke halaman login dengan pesan error
         }
+    }
+    @GetMapping("/register")
+    public String userRegister() {
+        return "user/registeruser";
     }
 }
