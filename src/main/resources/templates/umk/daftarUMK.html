@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMK App</title>
+  <link rel="stylesheet" href="/css/DaftarUMKstyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- <script>
+    // JavaScript function to validate passwords
+    function validatePasswords(event) {
+      var password = document.getElementById('password').value;
+      var retypePassword = document.getElementById('retype-password').value;
+      var warningMessage = document.getElementById('warning-message');
+      
+      // Check if passwords match
+      if (password !== retypePassword) {
+        // Show warning message
+        warningMessage.style.display = 'block';
+        warningMessage.textContent = 'Password and retype password are not the same';
+        event.preventDefault(); // Prevent form submission
+      } else {
+        // Hide warning message if passwords match
+        warningMessage.style.display = 'none';
+      }
+    }
+  </script> -->
+</head>
+<body>
+  <div id="container">
+    <div id="header"></div>
+    <p id="judul">UMK APP</p>
+    <p id="subjudul">DAFTAR UMK</p>
+    <div id="subcontainer"></div>
+    <form method="post" action="register" th:object="${user}">
+    
+
+    <label for="nama-usaha">Nama Usaha:</label>
+    <input type="text" id="nama-usaha" name="namaUsaha" placeholder="Value" required  th:field="*{namaUsaha}">
+    <span th:if="${#fields.hasErrors('namaUsaha')}" th:errors="*{namaUsaha}"></span>
+
+    <label for="nama-pemilik">Nama Pemilik:</label>
+    <input type="text" id="nama-pemilik" name="namaPemilik" placeholder="Value" required th:field="*{namaPemilik}">
+     <span th:if=""></span> 
+
+    <label for="alamat-usaha">Alamat Usaha:</label>
+    <input type="text" id="alamat-usaha" name="alamat-usaha" placeholder="Value" required>
+
+    <label for="deskripsi">Deskripsi:</label>
+    <textarea id="deskripsi" name="deskripsi" placeholder="Value"></textarea>
+
+    <label for="logo">Select Logo:</label>
+    <input type="file" id="logo" name="logo" required>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Value" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Value" required>
+
+    <label for="retype-password">Retype Password:</label>
+    <input type="password" id="retype-password" name="retype-password" placeholder="Value" >
+
+    <button type="submit" id="daftarbutton">Daftar</button>
+
+    <span id="warning-message" style="color: red; display: none;"></span><br><br>
+    </form>
+  </div>
+</body>
+</html>

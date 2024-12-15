@@ -1,4 +1,4 @@
-package Apu.demo.login;
+package Apu.demo.loginAdmin;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
