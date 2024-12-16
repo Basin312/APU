@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Example</title>
+  <style>
+    .dropdown {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .dropdown-details {
+      display: none;
+      margin-top: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dropdown">
+    <button onclick="toggleDetails(this)">Produk 1 (UKM 1 - SOLD: 1000)</button>
+    <div class="dropdown-details">
+      <p>Kategori: [kategori]</p>
+      <p>Sold Berapa: 1000</p>
+      <p>Harga: [harga]</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails(button) {
+      const details = button.nextElementSibling;
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
