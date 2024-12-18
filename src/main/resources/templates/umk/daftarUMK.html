@@ -33,7 +33,7 @@
     <p id="judul">UMK APP</p>
     <p id="subjudul">DAFTAR UMK</p>
     <div id="subcontainer"></div>
-    <form method="post" action="register" >
+    <form method="post" action="register" enctype="multipart/form-data">
     
 
     <label for="nama-usaha">Nama Usaha:</label>
@@ -42,10 +42,11 @@
 
     <label for="nama-pemilik">Nama Pemilik:</label>
     <input type="text" id="nama-pemilik" name="namaPemilik" placeholder="Value" required >
-    <!-- <span th:if=""></span>  -->
+    <!-- <span th:if="${#fields.hasErrors('namaPemilik')}" th:errors="*{namaPemilik}"></span> -->
 
     <label for="alamat-usaha">Alamat Usaha:</label>
     <input type="text" id="alamat-usaha" name="alamat-usaha" placeholder="Value" required>
+    <!-- <span th:if="${#fields.hasErrors('alamat-usaha')}" th:errors="*{alamat-usaha}"></span> -->
 
     <label for="deskripsi">Deskripsi:</label>
     <textarea id="deskripsi" name="deskripsi" placeholder="Value"></textarea>
@@ -53,14 +54,19 @@
     <label for="logo">Select Logo:</label>
     <input type="file" id="logo" name="logo" required>
 
+    <!-- <label for="noHp">No Hp</label>
+    <input type="text" id="noHp" name="noHp" placeholder="No Hp"> -->
+
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" placeholder="Value" required>
 
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" placeholder="Value" required>
+    <!-- <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span> -->
 
     <label for="retype-password">Retype Password:</label>
     <input type="password" id="retype-password" name="retype-password" placeholder="Value" >
+    <!-- <span th:if="${#fields.hasErrors('retype-password')}" th:errors="*{retype-password}"></span> -->
 
     <button type="submit" id="daftarbutton">Daftar</button>
 

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AdminController {
 
     @Autowired
-    private LoginRepository loginRepository;
+    private AdminRepository adminRepository;
 
     @GetMapping("/")
     public String showLoginForm() {
@@ -24,7 +24,7 @@ public class AdminController {
 
     @PostMapping("/")
     public String authenticateUser(@RequestParam String username, @RequestParam String password, Model model) {
-        List<Login> admins = loginRepository.findAdmin(username);
+        List<Admin> admins = adminRepository.findAdmin(username);
 
         if (!admins.isEmpty()&& admins !=null) {
             if(admins.get(0).getPassword().equals(password)){
