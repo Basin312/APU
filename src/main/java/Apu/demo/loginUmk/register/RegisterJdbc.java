@@ -15,8 +15,8 @@ public class RegisterJdbc implements RegisterRepository{
     private JdbcTemplate jdbcTemplate;
     
     public void save(Register user) throws Exception {
-        String sql = "INSERT INTO umk (nama, password, username, namaPemilik, alamat, deskripsi, logo) VALUES (?,?,?,?,?,?,?)";
-        jdbcTemplate.update(sql, user.getNama(), user.getPassword(),user.getUsername(),user.getNamaPemilik(), user.getAlamat(), user.getDeksripsi(), user.getLogo());
+        String sql = "INSERT INTO umk (nama, password, username, noHp ,namaPemilik, alamat, deskripsi, logo) VALUES (?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, user.getNama(), user.getPassword(), user.getUsername(), user.getNoHp(),user.getNamaPemilik(), user.getAlamat(), user.getDeksripsi(), user.getLogo());
     }
 
     public Optional<Register> findByUsername(String username) {

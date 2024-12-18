@@ -35,6 +35,7 @@ public class RegisterController {
                              @RequestParam("deskripsi") String deskripsi,
                              @RequestParam("username") String username,
                              @RequestParam("password") String password,
+                             @RequestParam("noHp") String noHp,
                              @RequestParam("retype-password") String retypePassword,
                              @RequestParam("logo") MultipartFile image){
         try {
@@ -57,7 +58,7 @@ public class RegisterController {
             if(!password.equals(retypePassword)){
                 return "redirect:/user/register";
             }
-            registerRepository.save(new Register(nama, username, password, retypePassword, null, namaPemilik, alamat, deskripsi, "/logo/" + filename));
+            registerRepository.save(new Register(nama, username, password, retypePassword, noHp, namaPemilik, alamat, deskripsi, "/logo/" + filename));
         } catch (Exception e) {
         }
         return "redirect:/user/";
