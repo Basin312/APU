@@ -62,109 +62,6 @@ body{
     cursor: pointer;
 }
 
-
-/* Body Start Here */
-
-.monthnavigationbutton{
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.monthnavigationbutton:hover{
-    width: 40px;
-    height: 40px;
-    background-color: grey;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.bodycontainer{
-    justify-items: center;
-}
-
-.laporancontainer{
-    width: 80%;
-    height: 1000px;
-    /* border-style: solid; */
-    display: flex;
-    flex-direction: column;
-}
-
-.navbarlaporan{
-    width: 100%;
-    height: 100px;
-    /* border-style: solid; */
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-}
-
-
-.headerlaporan{
-    width: 100%;
-    height: 100px;
-    /* border-style: solid; */
-    background-color: #D9D9D9;
-    display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    font-size: 30px;
-}
-
-.contentlaporan{
-    width: 100%;
-    height: 100%;
-    /* background-color: black; */
-    /* border-style: solid; */
-    margin-top: 20px;
-}
-
-/* containerlaporan */
-
-.subcontainerlaporan{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-style: solid;
-    margin-top: 20px;
-}
-
-.subcontainerlaporan-header{
-    width: 100%;
-    height: 60px;
-    border-style: solid;
-    display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    font-size: 30px;
-}
-
-.subcontainerlaporan-body{
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
-    gap: 10px;
-    border-style: solid;
-}
-
-.content{
-    width: 100%;
-    height: 60px;
-    
-    
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
-    font-size: 20px;
-    
-}
-
 .round-button {
     width: 90px;
     height: 90px;
@@ -182,4 +79,21 @@ body{
     cursor: pointer; /* Changes cursor to pointer on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for a modern look */
 
+}
+
+
+/* body start here */
+
+
+.bodycontainer{
+    justify-items: center;
+}
+
+.subcontainer{
+    width: 80%;
+    height: 1000px;
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
 }

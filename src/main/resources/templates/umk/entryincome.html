@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/entryincome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <h1>UMK APP</h1>
+        <div class="nav-links">
+            <a href="">Overview</a>
+            <a href="">Products</a>
+            <a href="">Transaction</a>
+        </div>
+        <button class="logout-button" onclick="window.location.href='../../Login/login.html';">Log out</button>
+        <!-- <div class="profile">J</div> -->
+    </div>
+
+    <div class="bodycontainer">
+        <div class="entrycontainer">
+            <div class="entryheader">
+                <button class="arrow-button">&larr;</button>
+                <p>Add Entry</p>
+            </div>
+            <div class="incomeorexpense">
+                <a><button class="iebutton" id="incomebutton">Income</button></a>
+                <a><button class="iebutton" id="expensebutton">Expense</button></a>
+
+            </div>
+
+            <div class="subcontainer">
+                <label for="datetime">Date and time : </label>
+                <input type="datetime-local" id="datetime" name="datetime">
+            </div>
+
+            <div class="subcontainer">
+                <label for="category">Category</label>
+                <input type="text" id="category" name="category" placeholder="Enter category">
+            </div>
+
+            <div class="subcontainer">
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount" placeholder="Enter amount">
+            </div>
+
+            <div class="subcontainer">
+                <label for="deskripsi">Deskripsi</label>
+                <input type="text" id="deskripsi" name="deskripsi" placeholder="Enter deskripsi">
+            </div>
+            
+
+
+
+            <button class="round-button">+</button>
+        </div>
+            
+        
+    </div>
+</body>
+</html>
