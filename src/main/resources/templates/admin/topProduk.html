@@ -40,10 +40,12 @@
         <h2 th:text="'sold:'+${produk.total}"></h2>
         <button onclick="toggleDetails(this)">detail</button>
         <div class="dropdown-details">
-          <p th:text="'deskripsi :'+${produk.deskripsi} ">Kategori: [kategori]</p>
-          <p th:text="'satuan :'+${produk.satuan} ">Kategori: [kategori]</p>
-          <p th:text="'Sold berapa: '+${produk.terjual}">Sold Berapa: 1000</p>
-          <p th:text="'Harga: '+${produk.harga}">Harga: [harga]</p>
+            <div class="display-details">  
+                <p th:text="'deskripsi :'+${produk.deskripsi} ">Kategori: [kategori]</p>
+                <p th:text="'satuan :'+${produk.satuan} ">Kategori: [kategori]</p>
+                <p th:text="'Sold berapa: '+${produk.terjual}">Sold Berapa: 1000</p>
+                <p th:text="'Harga: '+${produk.harga}">Harga: [harga]</p>
+            </div>
         </div>
     </div>
     <script>
