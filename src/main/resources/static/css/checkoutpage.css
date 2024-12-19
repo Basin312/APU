@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #ddd;
+    
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar h1 {
+    font-size: 40px;
+    margin-left: 20px;
+    margin: 0;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+   
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffffff;
+}
+
+.navbar .profile {
+    background-color: #007BFF;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.logout-button {
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+    margin-top: 2px;
+    width: 140px;
+    cursor: pointer;
+}
+
+/* body start here */
+
+.bodycontainer{
+    width: 100%;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subcontainer{
+    width: 60%;
+    border-style: solid;
+}
+.checkout-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+.checkout-items {
+    flex: 1;
+    padding: 20px;
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-items .checkout-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.checkout-items .checkout-item:last-child {
+    border-bottom: none;
+}
+
+.checkout-items p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.checkout-summary {
+    width: 250px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.checkout-summary p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.checkout-summary .total-price {
+    font-size: 18px;
+    color: #d9534f;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.confirm-btn {
+    background-color: #5cb85c;
+}
+
+.cancel-btn {
+    background-color: #d9534f;
+}
+
+/* Hover effects */
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    transform: scale(0.98);
+}

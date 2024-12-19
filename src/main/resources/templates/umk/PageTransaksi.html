@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/transactionpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../../static/Scripts/transactionpage.js" type="text/javascript" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>UMK APP</h1>
+        <div class="nav-links">
+            <a href="">Overview</a>
+            <a href="">Products</a>
+            <a href="">Transaction</a>
+        </div>
+        <button class="logout-button" onclick="window.location.href='../../Login/login.html';">Log out</button>
+        <!-- <div class="profile">J</div> -->
+    </div>
+
+    <div class="bodycontainer">
+        <div class="transaction-container">
+            <!-- Top Section -->
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search for products...">
+                <button id="search-button">Search</button>
+                
+            </div>
+    
+            <!-- Product Catalog -->
+            <div class="product-catalog">
+                <!-- Product components will be dynamically added here -->
+            </div>
+    
+            <!-- Bottom Section -->
+            <div class="preview">
+                <div class="total-products">Total products: 0</div>
+                <button class="proceed-btn">Proceed</button>
+                
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>
