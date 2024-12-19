@@ -1,0 +1,194 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #ddd;
+    
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar h1 {
+    font-size: 40px;
+    margin-left: 20px;
+    margin: 0;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+   
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffffff;
+}
+
+.navbar .profile {
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.logout-button {
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+    margin-top: 2px;
+    width: 140px;
+    cursor: pointer;
+}
+
+.round-button {
+    width: 90px;
+    height: 90px;
+    background-color:white; /* Button background color */
+    border-style: solid; /* No border */
+    border-radius: 50%; /* Makes the button round */
+    position: fixed; /* Keeps the button in a fixed position */
+    bottom: 60px; /* 60px from the bottom */
+    right: 60px; /* 60px from the right */
+    display: flex; /* Centers the "+" inside */
+    justify-content: center; /* Horizontally centers the "+" */
+    align-items: center; /* Vertically centers the "+" */
+    color: black; /* "+" color */
+    font-size: 40px; /* "+" font size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for a modern look */
+
+}
+
+/* BODY */
+
+.bodycontainer {
+    
+    margin: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+
+/* form */
+
+#backbutton{
+    width: 100px;
+    height: 40px;
+    margin-bottom: 40px;
+   padding: 10px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.container {
+    width: 40%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#product-title {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+#edit-title-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #007BFF;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    font-size: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#submit-btn:hover {
+    background: #0056b3;
+}
+
+#title-input {
+    font-size: 24px; /* Match the size of the original title */
+    font-weight: bold;
+    color: #333;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    padding: 5px;
+    width: calc(100% - 20px); /* Adjust width to fit neatly in the container */
+    box-sizing: border-box;
+    outline: none;
+}
