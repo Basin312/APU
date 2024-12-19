@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/umk/umk.css">
+</head>
+<body>
+    <div  class="navbar" >
+        <h1>UMK APP</h1>
+        <a href="/umk/overview"><p>Overview</p></a>
+        <a href="/umk/produk"><p>Produk</p></a>
+        <a href="/umk/Transaksi"><p>Transaksi</p></a>
+        <div id="profile"></div>
+        <a href="/login/">log out</a>
+    </div>
+
+    <div class="main">
+        <form action="/umk/change" method="post" enctype="multipart/form-data">
+            <p>Nama Produk :</p>
+            <input type="text" name="nama" th:value="${nama}">
+            <p>Harga :</p>
+            <input type="number" step=".01" min="0" max="100000000.99" name="harga" th:value="${harga}">
+            <p>Deskripsi :</p>
+            <input type="text" name="deskripsi" th:value="${deskripsi}">
+            <p>Satuan :</p>
+            <input type="text" name="satuan" th:value="${satuan}">
+            <p>Stock :</p>
+            <input type="number" min="0" name="stock" th:value="${stock}">
+            <div>
+                <input type="file" name="file" >
+            </div>
+                <input type="hidden" name="idProduk" th:value="${idProduk}">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+   
+</body>
+</html>

@@ -87,3 +87,49 @@ input{
     justify-content: center;
     align-items: center;
 }
+
+.dropdown{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto 1fr 5rem;
+    grid-template-areas: 
+    "produk umk sold . button"
+    ". data data data .";
+    height: auto;
+    width: 100%;
+    background-color: grey;
+    gap: 20px;
+    border: 2px solid black;
+}
+
+
+.dropdown h2:nth-of-type(1){
+    grid-area: produk;
+}
+
+.dropdown h2:nth-of-type(2){
+    grid-area: umk;
+}
+
+.dropdown h2:nth-of-type(3){
+    grid-area: sold;
+}
+
+.dropdown button{
+    grid-area: button;
+}
+
+.dropdown div{
+    grid-area: data;
+}
+
+.dropdown-details{
+    display: none;
+
+}
+
+.display-details{
+    display: grid;
+    border: 2px solid black;
+    width: 100%;
+}
