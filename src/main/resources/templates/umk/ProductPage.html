@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../static/css/productpage.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../../static/Scripts/Productpage.js" type="text/javascript" defer></script>
 </head>
 <body>
     <div class="navbar">
@@ -22,14 +23,63 @@
     <div class="bodycontainer">
         <div class="subcontainer">
             <div class="header">
-                <p>Product Overview</p>
+                <p id="subjudul">Product Overview</p>
                 <div class="filtercontainer">
-
+                    <div class="search-container">
+                        <input type="text" id="search-bar" placeholder="Search..." />
+                        <button id="search-button">Search</button>
+                    </div>
                 </div>
 
                 <div class="allproductcontainer">
+                    <div class="productcomponent">
+                        <div class="product-summary">
+                            <p class="product-name">Product Name</p>
+                            <p class="product-price">Price: Rp x</p>
+                            <p class="product-sold">Sold Amount: x</p>
+                            <button class="toggle-details">⬇</button>
+                        </div>
+                        <div class="product-details" style="display: none;">
+                            <p><strong>Product:</strong> Product Name</p>
+                            <p><strong>Category:</strong> Category Name</p>
+                            <p><strong>Price:</strong> Rp x</p>
+                            <p><strong>Sold Amount:</strong> x</p>
+                        </div>
+                    </div>
+
+                    <div class="productcomponent">
+                        <div class="product-summary">
+                            <p class="product-name">Product Name</p>
+                            <p class="product-price">Price: Rp x</p>
+                            <p class="product-sold">Sold Amount: x</p>
+                            <button class="toggle-details">⬇</button>
+                        </div>
+                        <div class="product-details" style="display: none;">
+                            <p><strong>Product:</strong> Product Name</p>
+                            <p><strong>Category:</strong> Category Name</p>
+                            <p><strong>Price:</strong> Rp x</p>
+                            <p><strong>Sold Amount:</strong> x</p>
+                        </div>
+                    </div>
+
+                    <div class="productcomponent">
+                        <div class="product-summary">
+                            <p class="product-name">Product Name</p>
+                            <p class="product-price">Price: Rp x</p>
+                            <p class="product-sold">Sold Amount: x</p>
+                            <button class="toggle-details">⬇</button>
+                        </div>
+                        <div class="product-details" style="display: none;">
+                            <p><strong>Product:</strong> Product Name</p>
+                            <p><strong>Category:</strong> Category Name</p>
+                            <p><strong>Price:</strong> Rp x</p>
+                            <p><strong>Sold Amount:</strong> x</p>
+                        </div>
+                    </div>
                     
                 </div>
+
+                
             </div>
         </div>
             

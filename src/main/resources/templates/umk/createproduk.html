@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/createproduk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="../../static/Scripts/createproduct.js" type="text/javascript" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>UMK APP</h1>
+        <div class="nav-links">
+            <a href="">Overview</a>
+            <a href="">Products</a>
+            <a href="">Transaction</a>
+        </div>
+        <button class="logout-button" onclick="window.location.href='../../Login/login.html';">Log out</button>
+        <!-- <div class="profile">J</div> -->
+    </div>
+    <div class="bodycontainer">
+       
+        <div class="container">
+            <button id="backbutton">back</button>
+            <!-- Editable Title Section -->
+            <div class="title-section">
+                <h1 id="product-title">New Product</h1>
+                <button id="edit-title-btn">Edit</button>
+            </div>
+    
+            <!-- Input Fields Section -->
+            <form id="product-form">
+                <div class="input-group">
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" placeholder="Enter category">
+                </div>
+                <div class="input-group">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" placeholder="Enter price">
+                </div>
+                <div class="input-group">
+                    <label for="product-code">Product Code:</label>
+                    <input type="text" id="product-code" placeholder="Enter product code">
+                </div>
+                <div class="input-group">
+                    <label for="stocks">Stocks:</label>
+                    <input type="number" id="stocks" placeholder="Enter stock quantity">
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
