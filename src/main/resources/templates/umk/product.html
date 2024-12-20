@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/umk/umk.css">
+</head>
+<body>
+    <div  class="navbar" >
+        <h1>UMK APP</h1>
+        <a href="/umk/overview"><p>UMK</p></a>
+        <a href="/umk/produk"><p>Top Produk</p></a>
+        <a href="/umk/Transaksi"><p>Request</p></a>
+        <div id="profile"></div>
+        <a href="/login/">log out</a>
+    </div>
+
+    <div class="main">
+        <div class="box1">
+            <div class="judul ">
+                <h2>List Produk :</h2>
+            </div>
+            <div class="addproduk">
+                <form action="/umk/addproduk">
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+            <div class="list">
+                <div class="data1" th:each="row : ${produk}">
+                    <h3 th:text="${row.namaProduk}">namaProduk</h3>
+                    <form action="/umk/editProduk" method="post">
+                        <input type="hidden" th:value="${row.idProduk}" name="idProduk">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <button onclick="toggleDetails(this)">detail</button>
+                    <div class="detail">
+                        <div>
+                            <img th:src="${row.foto}" alt="gambar produk">
+                        </div>
+                        
+                        <h3>Deskripsi :</h3>
+                        <p th:text="${row.deskripsi}"></p>
+                        <p th:text="'Harga :'+${row.harga}"></p>
+                        <p th:text="'Satuan :'+${row.satuan}"></p>
+                        <p th:text="'Stock :'+${row.Stock}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+    </div>
+    <script>
+        function toggleDetails(button) {
+          const details = button.nextElementSibling;
+          details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

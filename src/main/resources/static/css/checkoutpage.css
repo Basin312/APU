@@ -70,7 +70,7 @@ body{
 
 .bodycontainer{
     width: 100%;
-    border-style: solid;
+    /* border-style: solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,14 +78,14 @@ body{
 
 .subcontainer{
     width: 60%;
-    border-style: solid;
+    /* border-style: solid; */
 }
 .checkout-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    border-style: solid;
+    /* border-style: solid; */
     box-sizing: border-box;
 }
 
@@ -124,14 +124,14 @@ body{
 }
 
 .checkout-summary p {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
 }
 
 .checkout-summary .total-price {
-    font-size: 18px;
+    font-size: 20px;
     color: #d9534f;
 }
 
@@ -146,7 +146,7 @@ button {
 }
 
 .confirm-btn {
-    background-color: #5cb85c;
+    background-color: #007BFF;
 }
 
 .cancel-btn {
