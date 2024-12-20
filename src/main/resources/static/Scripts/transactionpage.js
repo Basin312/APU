@@ -1,15 +1,5 @@
-// Mockup data
-const products = [
-    { name: 'Produk D1', price: 150000.0, stock: 10, initialStock: 10, quantity: 0 },
-    { name: 'Produk D2', price: 200000.0, stock: 10, initialStock: 10, quantity: 0 },
-    { name: 'Produk E1', price: 120000.0, stock: 10, initialStock: 10, quantity: 0 },
-    { name: 'Produk E2', price: 180000.0, stock: 10, initialStock: 10, quantity: 0 },
-    { name: 'Produk F1', price: 90000.0, stock: 10, initialStock: 10, quantity: 0 },
-    { name: 'Produk F2', price: 130000.0, stock: 10, initialStock: 10, quantity: 0 },
-];
-
 let totalProducts = 0;
-let filteredProducts = [...products]; // Start with all products
+let filteredProducts = []; // Start with an empty filtered products array
 
 // Function to change the product quantity and update stock
 function changeQuantity(event, change) {
@@ -44,7 +34,7 @@ function resetTransaction() {
 // Function to render the product catalog
 function renderCatalog() {
     const catalog = document.querySelector('.product-catalog');
-    catalog.innerHTML = '';
+    catalog.innerHTML = ''; // Clear the catalog
 
     filteredProducts.forEach((product, index) => {
         const productDiv = document.createElement('div');
@@ -63,6 +53,7 @@ function renderCatalog() {
         catalog.appendChild(productDiv);
     });
 
+    // Add event listeners for quantity buttons
     document.querySelectorAll('.decrease-btn').forEach((btn) =>
         btn.addEventListener('click', (e) => changeQuantity(e, -1))
     );
@@ -87,35 +78,33 @@ function searchProducts() {
     );
 
     renderCatalog(); // Re-render the filtered products
-
-    
 }
 
+// Function to load products from localStorage and render them
 function loadProducts() {
     // Retrieve the products array from localStorage (if it exists)
     const storedProducts = JSON.parse(localStorage.getItem('products'));
 
     if (storedProducts) {
-        // Update the main products array with the stored products
-        products.splice(0, products.length, ...storedProducts);  // Clear and update the array in one step
+        // Update the filteredProducts with the stored products
+        filteredProducts = [...storedProducts];  // Use stored products for rendering
     }
 
-    // Re-render the catalog with updated products
-    filteredProducts = [...products]; // Reset filteredProducts to reflect the loaded products
     renderCatalog();
     updateTotalProducts();
 }
 
+// Proceed to checkout logic
 document.querySelector('.proceed-btn').addEventListener('click', () => {
     // Save the products with quantities to localStorage
-    const selectedProducts = products.filter(product => product.quantity > 0);
+    const selectedProducts = filteredProducts.filter(product => product.quantity > 0);
     localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
 
     // Save the updated products with stock changes to localStorage
-    localStorage.setItem('products', JSON.stringify(products)); // Save products as well
+    localStorage.setItem('products', JSON.stringify(filteredProducts)); // Save products with updated stock
 
     // Redirect to checkout page
-    window.location.href = 'checkoutpage.html'; // Make sure this URL is correct
+    window.location.href = 'checkoutpage.html'; // Ensure this URL is correct
 });
 
 // Add event listener to the search bar
@@ -125,7 +114,6 @@ document.querySelector('#search-bar').addEventListener('input', searchProducts);
 document.querySelector('.cancel-btn').addEventListener('click', resetTransaction);
 
 // Initial rendering
-loadProducts(); 
+loadProducts(); // Load products from localStorage
 renderCatalog();
 updateTotalProducts();
-

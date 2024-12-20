@@ -1,25 +1,43 @@
-document.getElementById("edit-title-btn").addEventListener("click", function () {
-    const titleElement = document.getElementById("product-title");
-    const currentText = titleElement.textContent;
+const productForm = document.getElementById('product-form');
 
-    // Replace title with input field
-    const inputField = document.createElement("input");
-    inputField.type = "text";
-    inputField.value = currentText;
-    inputField.id = "title-input";
+// Event Listener for Form Submission
+productForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    titleElement.replaceWith(inputField);
-    this.textContent = "Save";
+    // Get form values
+    const productName = document.getElementById('productname').value.trim(); // Get updated product name
+    const category = document.getElementById('category').value.trim();
+    const price = parseFloat(document.getElementById('price').value);
+    const productCode = document.getElementById('product-code').value.trim();
+    const stocks = parseInt(document.getElementById('stocks').value, 10);
 
-    // Save functionality
-    this.addEventListener("click", function saveTitle() {
-        const newTitle = inputField.value || "New Product";
-        const newTitleElement = document.createElement("h1");
-        newTitleElement.id = "product-title";
-        newTitleElement.textContent = newTitle;
+    // Validation
+    if (!productName || !category || isNaN(price) || !productCode || isNaN(stocks)) {
+        alert('Please fill out all fields correctly.');
+        return;
+    }
 
-        inputField.replaceWith(newTitleElement);
-        this.textContent = "Edit";
-        this.removeEventListener("click", saveTitle);
-    });
+    // Create product object
+    const newProduct = {
+        name: productName,
+        category: category,
+        price: price,
+        code: productCode,
+        stock: stocks, // Store stock value here
+        sold: 0, // Initial sold amount
+    };
+
+    // Retrieve existing products from localStorage
+    let products = JSON.parse(localStorage.getItem('products')) || [];
+    
+    // Add new product to the list
+    products.push(newProduct);
+    
+    // Save back to localStorage
+    localStorage.setItem('products', JSON.stringify(products));
+
+    alert('Product added successfully!');
+
+    // Redirect to Product List Page
+    window.location.href = 'ProductPage.html';
 });
