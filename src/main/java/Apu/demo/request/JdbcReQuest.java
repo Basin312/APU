@@ -9,22 +9,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-<<<<<<< HEAD
-public class JdbcReQuest implements RequestRepository{
-=======
 public class JdbcReQuest implements RequestRepository {
->>>>>>> 1c22eda28d6da27508d7fd1176ea820e399106df
+
 
     @Autowired
     private JdbcTemplate jdbc;
 
-<<<<<<< HEAD
-    @Override
-    public List<UmkRequest> findAll() {
-       String sql ="select nama, namapemilik, nohp, alamat, deskripsi, logo, approveumk FROM umk WHERE approveumk = false";
-
-       return jdbc.query(sql,this::mapRowToUmkRequest);
-=======
     private static final String BASE_QUERY = "SELECT nama, namapemilik, nohp, alamat, deskripsi, logo, approveumk FROM umk WHERE approveumk = false";
 
     @Override
@@ -61,7 +51,7 @@ public class JdbcReQuest implements RequestRepository {
             throw new IllegalArgumentException("Invalid sorting order: " + sortDirection);
         }
         return jdbc.query(sql, this::mapRowToUmkRequest);
->>>>>>> 1c22eda28d6da27508d7fd1176ea820e399106df
+
     }
 
     private UmkRequest mapRowToUmkRequest(ResultSet rs, int rowNum) throws SQLException {
@@ -75,22 +65,7 @@ public class JdbcReQuest implements RequestRepository {
             rs.getBoolean("approveumk")
         );
     }
-<<<<<<< HEAD
-
-    @Override
-    public List<UmkRequest> findByName(String nama) {
-        String sql = "select nama, namapemilik, nohp, alamat, deskripsi, logo, approveumk from umk WHERE approveumk = false AND nama = ?";
-        List<UmkRequest> user = jdbc.query(sql, this::mapRowToUmkRequest,nama);
-        return user.get(0) !=null ? user:null;
-    }
-
-    @Override
-    public void updateApprove(String nama, boolean approve) {
-        String sql = "UPDATE umk SET approveumk = ? WHERE nama = ?";
-        jdbc.update(sql, approve, nama);
-    }
 
     
-=======
->>>>>>> 1c22eda28d6da27508d7fd1176ea820e399106df
+
 }
